@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Btn from './button'
 export default function Header() {
     
     return (
@@ -27,6 +28,7 @@ export default function Header() {
                     <a href="" className="nav-menu-link text-white  transition ease-in-out delay-100 hover:text-[#91ff03]">Team</a>
                 </li>
             </ul>  
+            <Btn text="View in Rarible" />
         </div>
         </div>
         </div>
