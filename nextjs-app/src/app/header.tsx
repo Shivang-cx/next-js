@@ -7,7 +7,7 @@ export default function Header() {
         <div className='container mx-auto'>
         <div className="flex justify-between items-center">
         <div className="logo-wrapper">
-        <Image src=""  alt="Picture of the author" />
+        <Image src="/images/Logo.png" width={100} height={100} alt="Picture of the author" />
         </div>
         <div className="menu-wrapper flex items-center">
             <ul className="nav-menu flex mr-[35px]">
@@ -27,7 +27,6 @@ export default function Header() {
                     <a href="" className="nav-menu-link text-white  transition ease-in-out delay-100 hover:text-[#91ff03]">Team</a>
                 </li>
             </ul>  
-            {/* <Custbutton text="View in Rarebality"></Custbutton> */}
         </div>
         </div>
         </div>
