@@ -12,14 +12,14 @@ export default function Header() {
         </div>
         <div className="menu-wrapper flex items-center">
             <ul className="nav-menu flex mr-[35px]">
-                    <a href="" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">Home</a>
+                    <a href="#home" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">Home</a>
                 <li className="nav-menu-item">
                 </li>
                 <li className="nav-menu-item">
-                    <a href="" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">Artwork</a>
+                    <a href="#artwork" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">Artwork</a>
                 </li>
                 <li className="nav-menu-item">
-                    <a href="" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">Roadmap</a>
+                    <a href="#roadmap" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">Roadmap</a>
                 </li>
                 <li className="nav-menu-item">
                     <a href="" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">FAQ</a>
