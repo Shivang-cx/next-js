@@ -1,0 +1,16 @@
+import Image from 'next/image'  
+import Btn from './button';
+
+export default function Followus() {
+    return(
+        <section className='follow-us outer py-[130px] bg-[url(../../public/images/CTA-Bg.png)] relative bg-cover'>
+            <div className="container mx-auto text-center">
+                <h2 className='text-center spin-slow text-[64px] leading-[74px] text-[#fff]'>Follow us!</h2>
+                <p className='text-center max-w-[630px] mx-auto mt-[20px] mb-[30px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie viverra in id vitae gravida condimentum Eget orci, diam egestas non pharetra fer</p>
+                <Btn text="Twitter"></Btn>
+            </div>
+            <Image src="/images/CTA-Image.png" width={540} height={305} alt='img-1'  className='absolute left-[80px] bottom-[0]'/>
+            <Image src="/images/CTA-Image.png" width={540} height={305} alt='img-1'  className='absolute right-[80px] bottom-[0]'/>
+        </section>
+    );
+}

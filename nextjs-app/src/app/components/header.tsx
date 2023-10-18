@@ -1,9 +1,22 @@
+import { useState, useEffect } from 'react';
 import Image from 'next/image'
 import Btn from './button'
 export default function Header() {
-    
+    const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
     return (
-        <header className="header-wrapper w-full p-[25px] fixed  left-0 right-0 top-0 z-[999]">
+        <header className={`header-wrapper w-full p-[25px] fixed left-0 right-0 top-0 z-[999] transition ease-in-out delay-150  ${isSticky ? 'bg-[#111111e6]' : 'bg-transparent'}` }>
         <div className={`w-full h-full absolute top-0 left-0 bottom-0 right-0 z-[-1] transition ease-in-out delay-100`}></div>
         <div className='container mx-auto'>
         <div className="flex justify-between items-center">
