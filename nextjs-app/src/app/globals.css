@@ -68,3 +68,14 @@ h1,h2,h3,h4,h5,h6,a{
   height: 100%;
   object-fit: cover;
 }
+/*team section css*/
+.creators-img:hover .normal-img{
+  opacity:0;
+}
+.creators-img:hover .hover-img{
+opacity: 1;
+transform:scale3D(1,1,1) translate(-50%, -50%);
+}
+.hover-img{
+  transform: scale3D(1,1,1) translate(-50%, -50%);
+}
