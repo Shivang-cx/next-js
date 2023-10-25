@@ -2,6 +2,7 @@
 import Banner from './components/banner'
 import Faq from './components/faq'
 import Followus from './components/followus'
+import Footer from './components/footer'
 import Header from './components/header'
 import OurTeam from './components/ourteam'
 import Roadmap from './components/roadmap'
@@ -16,6 +17,7 @@ export default function Home() {
       <Followus></Followus>
       <Faq></Faq>
       <OurTeam></OurTeam>
+      <Footer></Footer>
     </main>
   )
 }
