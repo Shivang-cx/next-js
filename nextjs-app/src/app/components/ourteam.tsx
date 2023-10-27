@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function OurTeam() {
     return(
         
-        <section className='our team py-[130px] relative'>
+        <section className='our team py-[130px] relative' id='Team'>
             <div className="container mx-auto z-10 relative">
             <h2 className='text-center spin-slow text-[56px] leading-[66px] text-[#fff]'>Our Team</h2>
             <p className='text-center max-w-[630px] mx-auto mt-[20px] mb-[50px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc posuere sapien risus imperdiet felis, dictumst eget nulla. Laoreet id volutpat tincidunt</p>

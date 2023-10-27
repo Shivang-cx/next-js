@@ -6,7 +6,6 @@ const ScrollingImages = () => {
   useEffect(() => {
     const images = document.querySelectorAll('.image');
     const container = document.querySelectorAll('.images-container');
-    // const revcontainer = document.querySelector('.revers');
 
     const totalImages = images.length;
     const imageWidth = images[0].clientWidth;

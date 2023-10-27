@@ -88,3 +88,6 @@ transform:translate(-50%, -50%) scale(1);
 .ft-left *, .ft-right *, .copy-text{
   font-family: 'Poppins', sans-serif !important;
 }
+.Faq-item .content{
+transition: all 500ms;
+}

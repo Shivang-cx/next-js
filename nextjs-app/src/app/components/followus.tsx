@@ -3,7 +3,7 @@ import Btn from './button';
 
 export default function Followus() {
     return(
-        <section className='follow-us outer py-[130px] bg-[url(../../public/images/CTA-Bg.png)] relative bg-cover'>
+        <section className='follow-us outer py-[130px] bg-[url("/images/CTA-Bg.png")] relative bg-cover'>
             <div className="container mx-auto text-center">
                 <h2 className='text-center spin-slow text-[64px] leading-[74px] text-[#fff]'>Follow us!</h2>
                 <p className='text-center max-w-[630px] mx-auto mt-[20px] mb-[30px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie viverra in id vitae gravida condimentum Eget orci, diam egestas non pharetra fer</p>

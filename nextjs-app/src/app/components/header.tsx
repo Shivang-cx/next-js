@@ -35,10 +35,10 @@ export default function Header() {
                     <a href="#roadmap" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">Roadmap</a>
                 </li>
                 <li className="nav-menu-item">
-                    <a href="" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">FAQ</a>
+                    <a href="#FAQ" className="nav-menu-link mr-[40px] text-white transition ease-in-out delay-100 hover:text-[#91ff03]">FAQ</a>
                 </li>
                 <li className="nav-menu-item">
-                    <a href="" className="nav-menu-link text-white  transition ease-in-out delay-100 hover:text-[#91ff03]">Team</a>
+                    <a href="#Team" className="nav-menu-link text-white  transition ease-in-out delay-100 hover:text-[#91ff03]">Team</a>
                 </li>
             </ul>  
             <Btn text="View in Rarible" />
