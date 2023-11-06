@@ -1,6 +1,10 @@
 import Image from 'next/image'  
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Initialize ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 export default function Roadmap() {
     const [activeTab, setActiveTab] = useState(0);
 
