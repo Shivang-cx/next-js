@@ -1,34 +1,30 @@
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import Btn from "./button";
 import Image from 'next/image'
 const ScrollingImages = () => {
-  useEffect(() => {
-    const images = document.querySelectorAll('.image');
-    const container = document.querySelectorAll('.images-container');
 
-    const totalImages = images.length;
-    const imageWidth = images[0].clientWidth;
-    const containerWidth = totalImages * imageWidth;
+const sliderRef = useRef(null);
+const sliderTwoRef = useRef(null);
+useEffect(() => {
+  const slider = sliderRef.current;
+  const sliderTwo = sliderTwoRef.current;
 
-    // container.style.width = `${containerWidth}px`;
+  const slides = slider.querySelectorAll('.image');
+  const slidesTow = sliderTwo.querySelectorAll('.image');
 
-    const tl = gsap.timeline({ repeat: -1 });
+  const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
-    tl.fromTo(container, { y: 0 }, { y: `-${imageWidth}px`, duration: 1, speed:1, ease: 'power2.inOut' })
-      .to(container, { y: `-${2 * imageWidth}px`, duration: 1, ease: 'power2.inOut' }, '+=1')
-      .to(container, { y: `-${3 * imageWidth}px`, duration: 1, ease: 'power2.inOut' }, '+=1')
-      .to(container, { y: 0, duration: 1, ease: 'power2.inOut' }, '+=1');
+  tl.to(slides,  {
+    yPercent: -100 * (slides.length - 1),
+    duration: slides.length * 2,
+    ease: 'power1.inOut',
+  });
 
-      // const bt = gsap.timeline({repeat:1});
-
-      // bt.fromTo(revcontainer, { y: 0 }, { y: `${imageWidth}px`, duration: 1, speed:8, ease: 'power2.inOut' })
-      // .to(revcontainer, { y: `${2 * imageWidth}px`, duration: 1, ease: 'power2.inOut' }, '+=1')
-      // .to(revcontainer, { y: `${3 * imageWidth}px`, duration: 1, ease: 'power2.inOut' }, '+=1')
-      // .to(revcontainer, { y: 0, duration: 1, ease: 'power2.inOut' }, '+=1');
-
-  }, []);
-
+  return () => {
+    tl.kill(); // Clean up the timeline when the component is unmounted
+  };
+}, []);
 
   return (
     <section className="discover-drops-section relative" id="artwork">
@@ -42,7 +38,7 @@ const ScrollingImages = () => {
         </div>
         <div className="imgs-slider flex gap-x-[20px] truncate">
             <div className="flex flex-col gap-y-[20px] images-container">
-            <div className="inner-container flex flex-col gap-y-[20px]">
+            <div className="inner-container flex flex-col gap-y-[20px]" ref={sliderRef}>
                 <Image className='image' src="/images/Hero-Image-For-bottom-left.png" width={250} height={250} alt="col-img"/>
                 <Image className='image' src="/images/Hero-Image-For-bottom-left.png" width={250} height={250} alt="col-img"/>
                 <Image className='image' src="/images/Hero-Image-For-bottom-left.png" width={250} height={250} alt="col-img"/>
@@ -51,7 +47,7 @@ const ScrollingImages = () => {
             </div>
             </div>
             <div className="flex flex-col gap-y-[20px] images-container revers">
-            <div className="inner-container flex flex-col gap-y-[20px]">
+            <div className="inner-container flex flex-col gap-y-[20px]" ref={sliderTwoRef}>
                 <Image className='image' src="/images/Hero-Image-For-bottom-right.png" width={250} height={250} alt="col-img"/>
                 <Image className='image' src="/images/Hero-Image-For-bottom-right.png" width={250} height={250} alt="col-img"/>
                 <Image className='image' src="/images/Hero-Image-For-bottom-right.png" width={250} height={250} alt="col-img"/>

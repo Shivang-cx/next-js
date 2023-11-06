@@ -1,9 +1,19 @@
 
-import React from 'react';
 import Image from 'next/image';
 import FAQComponent from './faqcomponent';
+import React , { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Faq: React.FC = () => {   
+
+    useEffect(() => {
+        AOS.init({
+             duration: 800,
+             once: false,
+           })
+     }, [])
+
     const faqs = [
         {
             question: 'When is the public mint date?',
@@ -28,7 +38,7 @@ const Faq: React.FC = () => {
         // Add more FAQs as needed
     ];
     return (
-        <section className="faq-sec relative pt-[150px] z-10" id="FAQ">
+        <section className="faq-sec relative pt-[150px] z-10" id="FAQ"  data-aos="fade-up">
             <div className="container mx-auto">
             <div className="questions-shape-left absolute left-0 top-[38%] right-auto bottom-auto z-[0] w-[300px] h-[500px] bg-[#552675] blur-[300px]"></div>
                 <h2 className='text-center spin-slow text-[56px] leading-[66px] text-[#fff]'>In case you<br />missed anything</h2>

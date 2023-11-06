@@ -1,9 +1,19 @@
 import Image from 'next/image'  
-
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function OurTeam() {
+
+    useEffect(() => {
+        AOS.init({
+             duration: 800,
+             once: false,
+           })
+     }, [])
+
     return(
         
-        <section className='our team py-[130px] relative' id='Team'>
+        <section className='our team py-[130px] relative' id='Team'   data-aos="fade-up">
             <div className="container mx-auto z-10 relative">
             <h2 className='text-center spin-slow text-[56px] leading-[66px] text-[#fff]'>Our Team</h2>
             <p className='text-center max-w-[630px] mx-auto mt-[20px] mb-[50px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc posuere sapien risus imperdiet felis, dictumst eget nulla. Laoreet id volutpat tincidunt</p>
@@ -39,7 +49,7 @@ export default function OurTeam() {
                 </div>
             </div>
             </div>  
-            <div className="theme-shape absolute left-[19%] top-auto right-auto bottom-0 z-0 w-[1200px] h-[500px] bg-[#622b45] blur-[200px]"></div>
+            <div className="theme-shape absolute left-[19%] top-auto right-auto bottom-0 z-0 w-[1200px] h-[500px] bg-[#622b45] blur-[200px]"  data-aos="fade-up"></div>
         </section>
     );
 }
