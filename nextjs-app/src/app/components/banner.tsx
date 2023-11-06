@@ -79,15 +79,16 @@ const containerRef = useRef<HTMLDivElement>(null);
     const images = container?.querySelectorAll('.image-box');
 
     const handleMouseEnter = (e: MouseEvent) => {
+      console.log("mouse x - " , e.clientX);
+      console.log("mouse y - " , e.clientY);
       const mouseX = e.clientX;
       const mouseY = e.clientY;
 
       gsap.to(images, {
         // x: mouseX - container!.offsetLeft,
         // y: mouseY - container!.offsetTop,
-        x: mouseX / 10,
-        y: mouseY /10,
-        stagger: 0.2,
+        x: mouseX *0.1,
+        y: mouseY *0.1,
       });
     };
 
@@ -95,21 +96,20 @@ const containerRef = useRef<HTMLDivElement>(null);
       gsap.to(images, {
         x: 0,
         y: 0,
-        stagger: 0.2,
       });
     };
 
-    container?.addEventListener('mouseenter', handleMouseEnter);
-    container?.addEventListener('mouseleave', handleMouseLeave);
+    container?.addEventListener('mouseover', handleMouseEnter);
+    container?.addEventListener('mouseout', handleMouseLeave);
 
     return () => {
-      container?.removeEventListener('mouseenter', handleMouseEnter);
-      container?.removeEventListener('mouseleave', handleMouseLeave);
+      container?.removeEventListener('mouseover', handleMouseEnter);
+      container?.removeEventListener('mouseout', handleMouseLeave);
     };
   }, []);
 //-----------------------------------------------------------------------
-//  const containerRef = useRef<HTMLDivElement>(null);
-//   const imagesRef = useRef<HTMLImageElement[]>([]);
+// const containerRef = useRef<HTMLDivElement>(null);
+// const imagesRef = useRef<HTMLImageElement[]>([]);
 //  useEffect(() => {
 //     const container = containerRef.current;
 //     const images = imagesRef.current;
@@ -117,7 +117,7 @@ const containerRef = useRef<HTMLDivElement>(null);
 //     if (container && images) {
 //       const tl = gsap.timeline({ defaults: { ease: Power3.easeOut } });
       
-//       container.addEventListener('mousemove', (e) => {
+//       container.addEventListener('mouseenter', (e) => {
 //         const { clientX, clientY } = e;
 //         const x = clientX - container.offsetLeft;
 //         const y = clientY - container.offsetTop;
