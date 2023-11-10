@@ -52,29 +52,42 @@ export default function Roadmap() {
                     <p className='mt-[40px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
                 <div className='tab-hading w-[50%] flex flex-col mr-0 ml-auto'>
-                    <div data-aos="fade-up" className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 0 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
+                    <div className="aos" data-aos="fade-up">
+                    <div className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 0 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
                     <h4 className='absolute w-[60px] h-[60px] border border-[#565656] top-[50%] translate-y-[-50%] left-[-30px] rounded-full text-[32px] leading-[42px] flex justify-center items-center bg-[#0f0f11]'>1</h4>
                     <h3 className='text-[32px] leading-[42px] hover:cursor-pointer' onClick={() => handleClick(0)}>Mint on Ethereum</h3>
                     </div>
-                    <div data-aos="fade-up" className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 1 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
+                    </div>
+                    <div className="aos" data-aos="fade-up">
+                    <div className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 1 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
                     <h4 className='absolute w-[60px] h-[60px] border border-[#565656] top-[50%] translate-y-[-50%] left-[-30px] rounded-full text-[32px] leading-[42px] flex justify-center items-center bg-[#0f0f11]'>2</h4>
                     <h3 className='text-[32px] leading-[42px] hover:cursor-pointer' onClick={() => handleClick(1)}>Reveal metadata and rarity</h3>
                     </div>
-                    <div data-aos="fade-up" className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 2 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
+                    </div>
+
+                    <div className="aos" data-aos="fade-up">
+                        <div className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 2 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
                     <h4 className='absolute w-[60px] h-[60px] border border-[#565656] top-[50%] translate-y-[-50%] left-[-30px] rounded-full text-[32px] leading-[42px] flex justify-center items-center bg-[#0f0f11]'>3</h4>
                     <h3 className='text-[32px] leading-[42px] hover:cursor-pointer' onClick={() => handleClick(2)}>Social media assets</h3>
                     </div>
-                    <div data-aos="fade-up" className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 3 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
+                    </div>
+                    <div className="aos" data-aos="fade-up">
+                        <div className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 3 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
                     <h4 className='absolute w-[60px] h-[60px] border border-[#565656] top-[50%] translate-y-[-50%] left-[-30px] rounded-full text-[32px] leading-[42px] flex justify-center items-center bg-[#0f0f11]'>4</h4>
                     <h3 className='text-[32px] leading-[42px] hover:cursor-pointer' onClick={() => handleClick(3)}>Public Profile</h3>
                     </div>
-                    <div data-aos="fade-up" className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 4 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
+                    </div>
+                    <div className="aos" data-aos="fade-up">
+                        <div className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300 mb-[15px]  ${activeTab === 4 ? 'border-[#91ff03]' : 'border-[#565656]'}` }>
                     <h4 className='absolute w-[60px] h-[60px] border border-[#565656] top-[50%] translate-y-[-50%] left-[-30px] rounded-full text-[32px] leading-[42px] flex justify-center items-center bg-[#0f0f11]'>5</h4>
                     <h3 className='text-[32px] leading-[42px] hover:cursor-pointer' onClick={() => handleClick(4)}>Club Shop</h3>
                     </div>
-                    <div data-aos="fade-up" className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300  ${activeTab === 5 ? 'border-[#91ff03]' : 'border-[#565656]'}`}>
+                    </div>
+                    <div className="aos" data-aos="fade-up">
+                        <div className={`heading-wrapper fading-section relative py-[50px] pl-[80px] pr-[0] border  border-[#565656] mr-[15px] relative bg-transparent transition ease-in-out duration-300  ${activeTab === 5 ? 'border-[#91ff03]' : 'border-[#565656]'}`}>
                     <h4 className='absolute w-[60px] h-[60px] border border-[#565656] top-[50%] translate-y-[-50%] left-[-30px] rounded-full text-[32px] leading-[42px] flex justify-center items-center bg-[#0f0f11]'>6</h4>
                     <h3 className='text-[32px] leading-[42px] hover:cursor-pointer' onClick={() => handleClick(5)}>Private Club - Community Website</h3>
+                    </div>
                     </div>
                 </div>
             </div>

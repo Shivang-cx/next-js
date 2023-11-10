@@ -5,149 +5,43 @@ import { gsap } from 'gsap';
 import { Power3 } from 'gsap/gsap-core';
 
 export default function Banner() {
-    
-    //----------------------------------------------------------------------------------
-    // const handleMouseEnter = () => {
-    //     // Use GSAP to rotate the inner images
-    //     gsap.to('.image-box', { rotation: 360 });
-    //   };
-    
-    //   const handleMouseLeave = () => {
-    //     // Reset the rotation
-    //     gsap.to('.image-box', { rotation: 0 });
-    //   };
 
-    //----------------------------------------------------------------------------------
-    // const containerRef = useRef<HTMLDivElement>(null);
-    // const imagesRef = useRef<HTMLDivElement[]>([]);
-  
-    // useEffect(() => {
-    //   const container = containerRef.current;
-    //   const images = imagesRef.current;
-  
-    //   if (!container || images.length !== 4) return;
-  
-    //   container.addEventListener('mouseenter', (event) => {
-    //     const { clientX, clientY } = event;
-  
-    //     images.forEach((image, index) => {
-    //       const rect = image.getBoundingClientRect();
-    //       const offsetX = clientX - rect.left - rect.width / 2;
-    //       const offsetY = clientY - rect.top - rect.height / 2;
-  
-    //       gsap.to(image, {
-    //         x: offsetX,
-    //         y: offsetY,
-    //         duration: 0.5,
-    //       });
-    //     });
-    //   });
-  
-    //   container.addEventListener('mouseleave', () => {
-    //     images.forEach((image) => {
-    //       gsap.to(image, {
-    //         x: 0,
-    //         y: 0,
-    //         duration: 0.5,
-    //       });
-    //     });
-    //   });
-    // }, []);
-//---------------------------------------------------------------------
-//     const imageRef = useRef<HTMLImageElement>(null);
-
-//   useEffect(() => {
-//     const image = imageRef.current;
-//     if (!image) return;
-
-//     const onMouseMove = (event: MouseEvent) => {
-//       const { clientX, clientY } = event;
-//       gsap.to(image, { x: clientX / 20, y: clientY / 20, duration: 0.2 });
-//     };
-
-//     document.addEventListener('mousemove', onMouseMove);
-
-//     return () => {
-//       document.removeEventListener('mousemove', onMouseMove);
-//     };
-//       }, []);
-//----------------------------------------------------------------------
-const containerRef = useRef<HTMLDivElement>(null);
+const containerRef = useRef(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-    const images = container?.querySelectorAll('.image-box');
+    const container:any = containerRef.current;
 
-    const handleMouseEnter = (e: MouseEvent) => {
-      console.log("mouse x - " , e.clientX);
-      console.log("mouse y - " , e.clientY);
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
+    let mouseX = 0;
+    let mouseY = 0;
 
-      gsap.to(images, {
-        // x: mouseX - container!.offsetLeft,
-        // y: mouseY - container!.offsetTop,
-        x: mouseX *0.1,
-        y: mouseY *0.1,
+    const handleMouseMove = (e:any) => {
+      mouseX = e.clientX - container.offsetLeft;
+      mouseY = e.clientY - container.offsetTop;
+
+      gsap.to('.image-box', {
+        x: mouseX / 10,
+        y: mouseY / 10,
+        duration: 0.5,
       });
     };
 
     const handleMouseLeave = () => {
-      gsap.to(images, {
+      gsap.to('.image-box', {
         x: 0,
         y: 0,
+        duration: 0.5,
       });
     };
 
-    container?.addEventListener('mouseover', handleMouseEnter);
-    container?.addEventListener('mouseout', handleMouseLeave);
+    container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      container?.removeEventListener('mouseover', handleMouseEnter);
-      container?.removeEventListener('mouseout', handleMouseLeave);
+      container.removeEventListener('mousemove', handleMouseMove);
+      container.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
-//-----------------------------------------------------------------------
-// const containerRef = useRef<HTMLDivElement>(null);
-// const imagesRef = useRef<HTMLImageElement[]>([]);
-//  useEffect(() => {
-//     const container = containerRef.current;
-//     const images = imagesRef.current;
 
-//     if (container && images) {
-//       const tl = gsap.timeline({ defaults: { ease: Power3.easeOut } });
-      
-//       container.addEventListener('mouseenter', (e) => {
-//         const { clientX, clientY } = e;
-//         const x = clientX - container.offsetLeft;
-//         const y = clientY - container.offsetTop;
-
-//         tl.clear(); // Clear any previous animations
-
-//         images.forEach((image, index) => {
-//           const xOffset = x / container.clientWidth - 0.5;
-//           const yOffset = y / container.clientHeight - 0.5;
-
-//           tl.to(image, {
-//             x: xOffset * 100,
-//             y: yOffset * 100,
-//             duration: 0.1,
-//           });
-//         });
-//       });
-
-//       container.addEventListener('mouseleave', () => {
-//         tl.clear(); // Clear any previous animations
-//         images.forEach((image) => {
-//           tl.to(image, {
-//             x: 0,
-//             y: 0,
-//             duration: 0.,
-//           });
-//         });
-//       });
-//     }
-//   }, []);
 
     return (
         <section className='banner-main mt-[-110px] relative' id="home">

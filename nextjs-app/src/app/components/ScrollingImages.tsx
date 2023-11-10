@@ -6,18 +6,51 @@ const ScrollingImages = () => {
 
 const sliderRef = useRef(null);
 const sliderTwoRef = useRef(null);
+const sliderThreeRef = useRef(null);
 useEffect(() => {
-  const slider = sliderRef.current;
-  const sliderTwo = sliderTwoRef.current;
+  const slider:any = sliderRef.current;
 
   const slides = slider.querySelectorAll('.image');
-  const slidesTow = sliderTwo.querySelectorAll('.image');
 
   const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
   tl.to(slides,  {
-    yPercent: -100 * (slides.length - 1),
-    duration: slides.length * 2,
+    yPercent: -75 * (slides.length - 1),
+    duration: slides.length * 1,
+    ease: 'power1.inOut',
+  });
+
+  return () => {
+    tl.kill(); // Clean up the timeline when the component is unmounted
+  };
+}, []);
+
+useEffect(() => {
+  const sliderTwo:any = sliderTwoRef.current;
+  const slidesTow = sliderTwo.querySelectorAll('.image');
+
+  const tl = gsap.timeline({ repeat: -1, yoyo: true });
+
+  tl.to(slidesTow,  {
+    yPercent: 75 * (slidesTow.length - 1),
+    duration: slidesTow.length * 1,
+    ease: 'power1.inOut',
+  });
+
+  return () => {
+    tl.kill(); // Clean up the timeline when the component is unmounted
+  };
+}, []);
+
+useEffect(() => {
+  const sliderThree:any = sliderThreeRef.current;
+  const slidesThr = sliderThree.querySelectorAll('.image');
+
+  const tl = gsap.timeline({ repeat: -1, yoyo: true });
+
+  tl.to(slidesThr,  {
+    yPercent: -75 * (slidesThr.length - 1),
+    duration: slidesThr.length * 1,
     ease: 'power1.inOut',
   });
 
@@ -46,6 +79,7 @@ useEffect(() => {
                 <Image className='image' src="/images/Hero-Image-For-bottom-left.png" width={250} height={250} alt="col-img"/>
             </div>
             </div>
+            <div className='mt-[-90%]'>
             <div className="flex flex-col gap-y-[20px] images-container revers">
             <div className="inner-container flex flex-col gap-y-[20px]" ref={sliderTwoRef}>
                 <Image className='image' src="/images/Hero-Image-For-bottom-right.png" width={250} height={250} alt="col-img"/>
@@ -55,8 +89,9 @@ useEffect(() => {
                 <Image className='image' src="/images/Hero-Image-For-bottom-right.png" width={250} height={250} alt="col-img"/>
             </div>
             </div>
+            </div>
             <div className="flex flex-col gap-y-[20px] images-container">
-            <div className="inner-container flex flex-col gap-y-[20px]">
+            <div className="inner-container flex flex-col gap-y-[20px]" ref={sliderThreeRef}>
                 <Image className='image' src="/images/Hero-Image-For-bottom-left.png" width={250} height={250} alt="col-img"/>
                 <Image className='image' src="/images/Hero-Image-For-bottom-left.png" width={250} height={250} alt="col-img"/>
                 <Image className='image' src="/images/Hero-Image-For-bottom-left.png" width={250} height={250} alt="col-img"/>
