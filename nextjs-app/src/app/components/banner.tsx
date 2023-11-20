@@ -42,7 +42,6 @@ const containerRef = useRef(null);
     };
   }, []);
 
-
     return (
         <section className='banner-main mt-[-110px] relative' id="home">
             <Image src="/images/Hero.png" width={1920} height={1900} alt='Banner'/>
